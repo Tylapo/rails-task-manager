@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-between">
+        <h2><%= @task.title %></h2>
+        <div>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          <%= link_to "Edit this task", edit_task_path %>
+        </div>
+      </div>
+      <p class="bg-light p-3 rounded border"><%= @task.details %></p>
+      <div class="list-inline-item mb-3">
+        <% if @task.completed %>
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <p class="list-inline-item">This task is completed</p>
+        <% else %>
+            <i class="fa fa-square-o" aria-hidden="true"></i>
+            <p class="list-inline-item">This task is not completed yet</p>
+        <% end %>
+      </div>
+      <br>
+      <i class="fa fa-undo" aria-hidden="true"></i>
+      <%= link_to "Back to all tasks", tasks_path %>
+    </div>
+  </div>
+</div>
